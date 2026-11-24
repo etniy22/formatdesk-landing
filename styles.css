@@ -192,7 +192,7 @@ body {
   width: 842px; height: 575px;
 }
 .hero-star { position: absolute; left: 1157px; top: 88px; font-size: 60px; }
-.hero-one  { position: absolute; left: 937px; top: 105px; font-size: 24px; }
+.hero-one  { position: absolute; left: 962.5px; top: 105px; font-size: 24px; transform: translateX(-50%); }
 .hero-archcap { position: absolute; left: 666px; top: 725px; }
 .hero-line { position: absolute; left: 0; top: 0; width: 1296px; }
 
