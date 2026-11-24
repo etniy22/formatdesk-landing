@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FormatDesk — Алхимия ясности</title>
+<meta name="description" content="FormatDesk собирает экран версии форматного приказа ФНС: реквизиты с якорями XSD и каркас для макета.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23263C32'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='24' fill='%23EFEBE1' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<!-- 92:3 Навигация -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">FormatDesk</a>
+    <nav class="nav-links">
+      <a class="nl nl-1" href="#problema">Проблема</a>
+      <a class="nl nl-2" href="#ekrany">Экраны</a>
+      <a class="nl nl-3" href="#mvp">MVP</a>
+    </nav>
+    <a class="btn btn-nav" href="prototip/index.html" target="_blank" rel="noopener">
+      <span>Открыть прототип</span><span class="arr">↗</span>
+    </a>
+  </div>
+  <div class="wrap"><div class="hairline"></div></div>
+</header>
+
+<!-- 92:4 Первый экран -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <p class="tag tag-red hero-tag">// B2B · Операторы ЭПД · Форматные приказы ФНС</p>
+    <h1 class="hero-h1">Меньше обработки<br>приказов —</h1>
+    <p class="hero-h1b">больше<br>внимания UX</p>
+    <p class="hero-para">FormatDesk собирает экран версии форматного приказа ФНС: реквизиты с якорями XSD и каркас для макета.</p>
+    <a class="btn btn-hero" href="prototip/index.html" target="_blank" rel="noopener">
+      <span>Открыть Lo-Fi прототип</span><span class="arr">↗</span>
+    </a>
+    <p class="cap hero-cap">Каталог → Реквизиты → Якорь → Макет</p>
+
+    <div class="hero-arch"></div>
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+    <img class="hero-duo" src="assets/eng-duo.png" alt="Гравюра: два алхимика со свитком">
+    <span class="ornament hero-star">✦</span>
+    <span class="ornament hero-one">I</span>
+    <p class="cap hero-archcap">Алхимия ясного интерфейса</p>
+  </div>
+  <div class="wrap"><div class="hairline hero-line"></div></div>
+</section>
+
+<!-- 92:5 Для кого -->
+<section class="whom" id="dlya-kogo">
+  <div class="wrap whom-in">
+    <p class="tag tag-red whom-tag">01 / Для кого</p>
+    <h2 class="whom-h2">Решение принимает руководитель,<br>работают сотрудники</h2>
+    <div class="hairline whom-line-top"></div>
+    <div class="whom-vline"></div>
+
+    <div class="whom-col whom-col-1">
+      <div class="whom-head">
+        <span class="whom-num">I</span>
+        <p class="tag whom-label">Задача руководителя</p>
+      </div>
+      <h3 class="whom-title">Сократить время на задачи<br>по документам ЭПД</h3>
+      <p class="whom-body">Каждый новый формат — один и тот же цикл: найти приказ и XSD, разобрать схему, перегруппировать поля для постановки и макета.</p>
+      <p class="cap whom-foot">От сложного первоисточника</p>
+    </div>
+
+    <div class="whom-col whom-col-2">
+      <div class="whom-head">
+        <span class="whom-num">II</span>
+        <p class="tag whom-label">Опыт сотрудника</p>
+      </div>
+      <h3 class="whom-title">Один экран вместо<br>пяти инструментов</h3>
+      <p class="whom-body">Аналитик: статус версии, реквизиты и якоря XSD на одном экране.<br>Дизайнер: макет документа с теми же группами полей — без созвона ради списка.</p>
+      <p class="cap whom-foot">К понятной структуре</p>
+    </div>
+
+    <div class="hairline whom-line-bottom"></div>
+  </div>
+</section>
+
+<!-- 92:6 Проблема -->
+<section class="problem" id="problema">
+  <div class="wrap problem-in">
+    <p class="tag tag-red problem-tag">02 / Проблема</p>
+    <h2 class="problem-h2">Что команда делает<br>сегодня вручную</h2>
+    <p class="tag tag-sage problem-side">Из полевых<br>интервью</p>
+
+    <div class="pcard pcard-1">
+      <div class="parch"></div>
+      <img class="prider prider-1" src="assets/eng-rider-1.png" alt="Гравюра: всадник">
+      <p class="pnum">01</p>
+      <h3 class="ptitle">Поиск версии</h3>
+      <p class="pbody">Действующий приказ и XSD ищут на nalog.gov.ru вручную.</p>
+      <div class="pline"></div>
+      <p class="pquote">«Я не понимаю, это актуально сейчас или нет…»</p>
+      <p class="pauthor">Александр, аналитик</p>
+    </div>
+
+    <div class="pcard pcard-2">
+      <div class="parch"></div>
+      <img class="prider prider-2" src="assets/eng-rider-2.png" alt="Гравюра: всадник">
+      <p class="pnum">02</p>
+      <h3 class="ptitle">«Тихие» обновления</h3>
+      <p class="pbody">XSD может измениться без смены номера версии — сигнала об этом нет.</p>
+      <div class="pline"></div>
+      <p class="pquote">«На сайте не видел обновлений».</p>
+      <p class="pauthor">Павел, аналитик</p>
+    </div>
+
+    <div class="pcard pcard-3">
+      <div class="parch"></div>
+      <img class="prider prider-3" src="assets/eng-rider-3.png" alt="Гравюра: всадник">
+      <p class="pnum">03</p>
+      <h3 class="ptitle">Сводная таблица</h3>
+      <p class="pbody">Поля вручную переносят в Excel — промежуточный эталон для постановки и макета.</p>
+      <div class="pline"></div>
+      <p class="pquote">«Обычная таблица… не особо визуально понятно».</p>
+      <p class="pauthor">Татьяна, аналитик</p>
+    </div>
+
+    <div class="pcard pcard-4">
+      <div class="parch"></div>
+      <img class="prider prider-4" src="assets/eng-rider-4.png" alt="Гравюра: всадник">
+      <p class="pnum">04</p>
+      <h3 class="ptitle">Перепроверка ИИ</h3>
+      <p class="pbody">ИИ-черновики сверяют с текстом приказа построчно.</p>
+      <div class="pline"></div>
+      <p class="pquote">«Каждую строку перепроверяешь».</p>
+      <p class="pauthor">Дмитрий, аналитик</p>
+    </div>
+  </div>
+</section>
+
+<!-- 92:7 Четыре шага -->
+<section class="steps" id="ekrany">
+  <div class="wrap steps-in">
+    <p class="tag tag-sage steps-tag">03 / Экраны</p>
+    <h2 class="steps-h2">Как это работает:<br>четыре шага</h2>
+    <p class="tag tag-red steps-side">От первоисточника<br>до макета</p>
+
+    <div class="steps-list">
+      <button class="step is-active" type="button" data-shot="assets/01-catalog.png"
+        data-cap="Каталог форматов ЭПД: таблица с версией, статусом «действует с 01.09.2026» и ссылками на приказ и XSD">
+        <span class="step-num">01</span>
+        <span class="step-title">Каталог форматов</span>
+        <span class="step-desc">Статус версии и ссылки на официальный приказ и XSD.</span>
+      </button>
+      <button class="step" type="button" data-shot="assets/02-requisites.png"
+        data-cap="Экран версии: реквизиты приказа деревом — с поиском, обязательностью и множественностью">
+        <span class="step-num">02</span>
+        <span class="step-title">Экран версии: реквизиты</span>
+        <span class="step-desc">Дерево полей с поиском, обязательностью и множественностью.</span>
+      </button>
+      <button class="step" type="button" data-shot="assets/03-anchor-modal.png"
+        data-cap="Якорь XSD / приказ: имя XSD-файла и место в тексте приказа у выбранного реквизита">
+        <span class="step-num">03</span>
+        <span class="step-title">Якорь XSD / приказ</span>
+        <span class="step-desc">Первоисточник у каждого реквизита, на любом уровне вложенности.</span>
+      </button>
+      <button class="step" type="button" data-shot="assets/04-mockup.png"
+        data-cap="Макет документа: поля по титулам, собранные в каркас карточки ЭПД">
+        <span class="step-num">04</span>
+        <span class="step-title">Макет документа</span>
+        <span class="step-desc">Документ из отмеченных полей — основа для карточки ЭПД.</span>
+      </button>
+    </div>
+
+    <div class="vitrina">
+      <p class="tag vitrina-l">FormatDesk / Lo-Fi</p>
+      <p class="tag vitrina-r">Схема интерфейса</p>
+      <div class="vitrina-frame">
+        <img id="vitrina-img" src="assets/01-catalog.png" alt="Экран прототипа FormatDesk">
+      </div>
+      <p class="tag vitrina-b">Первоисточник → Структура → Интерфейс</p>
+    </div>
+
+    <p class="steps-cap" id="steps-cap">Каталог форматов ЭПД: таблица с версией, статусом «действует с 01.09.2026» и ссылками на приказ и XSD</p>
+
+    <div class="hairline steps-line"></div>
+  </div>
+</section>
+
+<!-- 92:8 Состав MVP -->
+<section class="mvp" id="mvp">
+  <div class="wrap mvp-in">
+    <img class="mvp-sprout" src="assets/eng-sprout-mvp.png" alt="Гравюра: магический росток из алхимической колбы">
+    <p class="tag tag-sage mvp-tag">04 / Состав продукта</p>
+    <h2 class="mvp-h2">MVP: что входит<br>и что — позже</h2>
+
+    <h3 class="mvp-sub">В MVP</h3>
+    <ul class="mvp-list">
+      <li><span class="mvp-num">01</span><span class="mvp-text">Каталог форматов со статусом версии и ссылками на приказ и XSD.</span></li>
+      <li><span class="mvp-num">02</span><span class="mvp-text">Реквизиты приказа на экране сервиса.</span></li>
+      <li><span class="mvp-num">03</span><span class="mvp-text">Якоря у любого реквизита: имя XSD-файла и место в тексте приказа.</span></li>
+      <li><span class="mvp-num">04</span><span class="mvp-text">Поля по титулам, каркас экрана и макет для дизайнера.</span></li>
+    </ul>
+
+    <div class="hairline mvp-line"></div>
+    <h3 class="mvp-later">За пределами MVP</h3>
+    <p class="mvp-later-body">Фиксация версии в Confluence и экспорт полей — следующие релизы.<br>Diff версий, СВЭД-форма, встройка в Figma.</p>
+
+    <p class="cap mvp-cap">Всё нужное. Ничего лишнего.</p>
+  </div>
+</section>
+
+<!-- 92:9 Приглашение -->
+<section class="invite">
+  <div class="wrap invite-in">
+    <p class="tag tag-gold invite-tag">4 шага: Каталог → Реквизиты → Якорь → Макет</p>
+    <h2 class="invite-h2">Посмотрите,<br>как это работает</h2>
+    <p class="invite-para">Каталог форматов, экран версии с реквизитами, якоря XSD и макет документа — всё это уже можно потрогать в кликабельном Lo-Fi прототипе.</p>
+    <a class="btn btn-invite" href="prototip/index.html" target="_blank" rel="noopener">
+      <span>Открыть Lo-Fi прототип</span><span class="arr">↗</span>
+    </a>
+    <div class="invite-medal"></div>
+    <img class="invite-dragon" src="assets/eng-dragon-medal.png" alt="Гравюра: драконы, скованные цепью">
+    <span class="ornament invite-star">✦</span>
+    <p class="cap invite-cap">Из хаоса — в систему</p>
+  </div>
+</section>
+
+<!-- 92:10 Подвал -->
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="hairline footer-line"></div>
+    <p class="footer-logo">FormatDesk</p>
+    <p class="cap footer-cap">Форматы. Структура. Ясность.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
