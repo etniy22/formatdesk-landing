@@ -285,10 +285,10 @@ body {
   border-radius: 131.5px 131.5px 0 0;
 }
 .prider { position: absolute; }
-.prider-1 { left: 0;    top: 313px; width: 250px; height: 253px; }
+.prider-1 { left: -20px; top: 313px; width: 250px; height: 253px; }
 .prider-2 { left: 12px; top: 326px; width: 261px; height: 240px; }
 .prider-3 { left: -32px; top: 320px; width: 250px; height: 243px; }
-.prider-4 { left: 0;    top: 338px; width: 240px; height: 220px; }
+.prider-4 { left: -18px; top: 338px; width: 240px; height: 220px; }
 
 .pnum {
   position: absolute; left: 0; top: 589px;
@@ -437,7 +437,8 @@ body {
   position: absolute;
   left: 497px; top: 245px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 36px; font-weight: 500;
+  font-size: 36px;
+  font-weight: 500;
   color: var(--green);
 }
 .mvp-list {
@@ -466,7 +467,8 @@ body {
   position: absolute;
   left: 497px; top: 599px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 30px; font-weight: 500;
+  font-size: 30px;
+  font-weight: 500;
   color: var(--gray);
 }
 .mvp-later-body {
