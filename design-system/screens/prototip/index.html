@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormatDesk — экран версии · тема дизайн-системы</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { background: #F5F2EB; }
+    iframe { display: block; width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <!-- Обёртка для GitHub Pages: исходный Lo-Fi прототип лежит в корне репозитория
+       (/prototip/index.html) и не дублируется. Тема дизайн-системы и шрифты
+       подключаются внутрь iframe после загрузки (тот же origin, поэтому
+       доступ к contentDocument разрешён). Локальная автономная копия с уже
+       встроенной темой хранится в папке проекта — см. README.md. -->
+  <iframe id="proto" src="../../../prototip/index.html" title="FormatDesk · экран версии в теме дизайн-системы"></iframe>
+  <script>
+    var frame = document.getElementById('proto');
+    frame.addEventListener('load', function () {
+      var doc = frame.contentDocument;
+      if (!doc || doc.getElementById('fds-theme')) return;
+      var fonts = doc.createElement('link');
+      fonts.rel = 'stylesheet';
+      fonts.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap';
+      doc.head.appendChild(fonts);
+      var theme = doc.createElement('link');
+      theme.id = 'fds-theme';
+      theme.rel = 'stylesheet';
+      theme.href = new URL('../../proto-theme.css', window.location.href).href;
+      doc.head.appendChild(theme);
+      var hdr = doc.querySelector('.hdr-title');
+      if (hdr) hdr.textContent = 'FormatDesk · экран версии (релиз 1)';
+      doc.title = 'FormatDesk — экран версии · тема дизайн-системы';
+    });
+  </script>
+</body>
+</html>
