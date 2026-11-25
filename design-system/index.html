@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormatDesk · Дизайн-система</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#/">FormatDesk<span> · ДС</span></a>
+      <nav class="topnav" aria-label="Разделы дизайн-системы">
+        <a href="#/" class="active">Главная</a>
+        <a href="#/osnovy">Основы</a>
+        <a href="#/komponenty">Компоненты</a>
+        <a href="#/golos">Голос бренда</a>
+        <a href="#/ekrany">Экраны продукта</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================ ГЛАВНАЯ ============================ -->
+  <main class="page active" data-page="" id="page-home">
+    <div class="wrap">
+      <p class="kicker">Дизайн-система продукта</p>
+      <h1>FormatDesk</h1>
+      <p class="lead">
+        Сервис для команды оператора ЭДО: следит за форматными приказами ФНС и собирает
+        «экран версии» — реквизиты приказа, группы полей и макет документа с якорями на официальные XSD.
+        Дизайн-система задаёт общий визуальный язык лендинга и сервиса, чтобы переход
+        «сайт → продукт» не требовал от пользователя нового привыкания.
+      </p>
+
+      <div class="card section-gap">
+        <h3>Аудитория</h3>
+        <div class="grid-2">
+          <div>
+            <p><strong>S1 · Дизайнер карточки ЭПД.</strong> Собирает макет регламентированного документа.
+            Нужен состав полей по титулам без созвона с аналитиком.</p>
+          </div>
+          <div>
+            <p><strong>S2 · Системный аналитик.</strong> Переносит приказ и XSD в постановку.
+            Нужны действующая версия, реквизиты и якоря на источник для сверки.</p>
+          </div>
+        </div>
+        <p class="muted small">По материалам корпуса: PRD.md, проблемные интервью R1–R4 (волна 21.10.2026).</p>
+      </div>
+
+      <div class="section-gap">
+        <h2>Принципы</h2>
+        <div class="grid-3">
+          <div class="card"><h3>Доверие через источник</h3><p>Любое значение можно проверить: рядом якорь на XSD и приказ. Ничто не выглядит «придуманным».</p></div>
+          <div class="card"><h3>Спокойная плотность</h3><p>Данных много — шума мало. Таблицы и деревья читаются построчно, без лишних рамок и теней.</p></div>
+          <div class="card"><h3>Один акцент</h3><p>На экране одно главное действие. Глубокий зелёный — действие, терракота — ссылки на источники и редкие метки.</p></div>
+          <div class="card"><h3>Документ как бумага</h3><p>Макет документа — белый «лист» на тёплом креме. Заголовки — книжный сериф, данные — ровный гротеск.</p></div>
+          <div class="card"><h3>Доступность по умолчанию</h3><p>Контраст текста ≥ 4.5, видимый фокус, управление с клавиатуры, уважение к prefers-reduced-motion.</p></div>
+          <div class="card"><h3>Честные состояния</h3><p>Загрузка, пусто, ошибка — всегда с объяснением и следующим шагом. Ошибка никогда не винит пользователя.</p></div>
+        </div>
+      </div>
+
+      <div class="section-gap">
+        <h2>Визуальное направление</h2>
+        <p class="lead">
+          «Тёплый архив»: кремовая бумага, глубокий зелёный, терракота и песочные границы.
+          Книжный сериф Cormorant Garamond для заголовков — как на лендинге; Inter для данных;
+          Space Mono для кодов и XPath. Палитра собрана из согласованных референсов бренда
+          (карта «референс → токен» — в разделе <a href="#/osnovy">«Основы»</a> и в README).
+        </p>
+        <div class="demo-row" style="margin-top: var(--fd-space-4)">
+          <span class="fd-badge fd-badge--dark">#1F3D2E · действие</span>
+          <span class="fd-badge fd-badge--accent">#C86A4A · терракота</span>
+          <span class="fd-badge fd-badge--neutral">#F5F2EB · крем</span>
+          <span class="fd-badge fd-badge--success">#44553A · шалфей</span>
+          <span class="fd-badge fd-badge--warning">#D89A3A · янтарь</span>
+        </div>
+      </div>
+
+      <div class="section-gap hero-preview">
+        <div class="card">
+          <p class="kicker">Пример интерфейса</p>
+          <h3 style="margin-bottom: 2px">Поручение экспедитору · формат 5.01</h3>
+          <p class="muted small" style="margin-bottom: var(--fd-space-4)">Действует с 01.09.2026 · приказ ФНС от 28.04.2026 № ЕД-1-26/277@</p>
+          <div class="fd-tabs" data-panels="home-tabs-panels" role="tablist" aria-label="Разделы карточки формата">
+            <button class="fd-tab" role="tab" aria-selected="true" aria-controls="home-tab-1" id="home-tabbtn-1">Реквизиты</button>
+            <button class="fd-tab" role="tab" aria-selected="false" aria-controls="home-tab-2" id="home-tabbtn-2">Макет</button>
+          </div>
+          <div id="home-tabs-panels">
+            <div class="fd-tabpanel" id="home-tab-1" role="tabpanel" aria-labelledby="home-tabbtn-1">
+              <div class="fd-search" style="margin-bottom: var(--fd-space-3)">
+                <span class="fd-search-icon" aria-hidden="true">⌕</span>
+                <input class="fd-input" type="search" placeholder="Поиск по реквизитам: код или наименование" aria-label="Поиск по реквизитам" />
+              </div>
+              <table class="fd-table">
+                <thead><tr><th>Реквизит</th><th>Тип</th><th>Обяз.</th></tr></thead>
+                <tbody>
+                  <tr><td>ИНН грузоотправителя</td><td class="mono">ИННЮЛ</td><td>1..1</td></tr>
+                  <tr class="selected"><td>Дата отправления</td><td class="mono">ДатаТип</td><td>1..1</td></tr>
+                  <tr><td>Пункт погрузки</td><td class="mono">АдресТип</td><td>0..1</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fd-tabpanel" id="home-tab-2" role="tabpanel" aria-labelledby="home-tabbtn-2" hidden>
+              <p class="muted">Макет документа с теми же группами полей, что видит аналитик, — смотрите на вкладке <a href="#/ekrany">«Экраны продукта»</a>.</p>
+            </div>
+          </div>
+          <div class="demo-row" style="margin-top: var(--fd-space-4)">
+            <button class="fd-btn fd-btn--primary" data-toast="Группировка принята в черновик постановки.">Принять группировку</button>
+            <a class="fd-link" href="#/ekrany">Якорь XSD ↗</a>
+          </div>
+        </div>
+        <div class="demo-col">
+          <div class="card" style="width: 100%">
+            <p class="kicker">Запуск</p>
+            <p class="small">Сайт статический, сборка не нужна:</p>
+            <p class="mono small" style="background: var(--fd-surface-warm); padding: var(--fd-space-2) var(--fd-space-3); border-radius: var(--fd-radius-m);">cd design-system<br/>python3 -m http.server 8901</p>
+            <p class="small muted">и открыть <span class="mono">http://localhost:8901/</span></p>
+          </div>
+          <div class="card" style="width: 100%">
+            <p class="kicker">Разделы</p>
+            <div class="demo-col" style="gap: var(--fd-space-2)">
+              <a class="fd-link" href="#/osnovy">Основы — токены, палитра, типографика</a>
+              <a class="fd-link" href="#/komponenty">Компоненты — кнопки, поля, диалоги</a>
+              <a class="fd-link" href="#/golos">Голос бренда — как мы пишем</a>
+              <a class="fd-link" href="#/ekrany">Экраны продукта — Lo-Fi в новой теме</a>
+              <a class="fd-link" href="tokens.json" target="_blank" rel="noreferrer">tokens.json — машинно-читаемые токены</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================ ОСНОВЫ ============================ -->
+  <main class="page" data-page="osnovy" id="page-osnovy">
+    <div class="wrap">
+      <p class="kicker">Основы</p>
+      <h1>Токены и базовые правила</h1>
+      <p class="lead">
+        Все значения хранятся в одном источнике — <a href="tokens.css" target="_blank" rel="noreferrer">tokens.css</a>
+        (CSS-переменные) и <a href="tokens.json" target="_blank" rel="noreferrer">tokens.json</a> (машинно-читаемая копия).
+        Компоненты и экраны продукта используют только переменные, без «голых» значений.
+        Тема одна — светлая: продукт работает с документами при дневном свете офиса; тёмная тема в объём р1 не входит.
+      </p>
+
+      <div class="section-gap">
+        <h2>Палитра</h2>
+        <h3>Фоны и поверхности · background / surface</h3>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#F5F2EB"></div><div class="swatch-body"><span class="swatch-role">background</span><div>Фон страницы</div><span class="token-name" data-copy="#F5F2EB" title="Нажмите, чтобы скопировать">--fd-bg · #F5F2EB</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#FFFFFF"></div><div class="swatch-body"><span class="swatch-role">surface</span><div>Карточки, таблицы</div><span class="token-name" data-copy="#FFFFFF">--fd-surface · #FFFFFF</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#EFECE2"></div><div class="swatch-body"><span class="swatch-role">surface</span><div>Утопленные зоны</div><span class="token-name" data-copy="#EFECE2">--fd-surface-sunken · #EFECE2</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#FAF7EF"></div><div class="swatch-body"><span class="swatch-role">surface</span><div>Шапки таблиц</div><span class="token-name" data-copy="#FAF7EF">--fd-surface-warm · #FAF7EF</span></div></div>
+        </div>
+
+        <h3 class="section-gap">Текст · text</h3>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#1A1A1A"></div><div class="swatch-body"><span class="swatch-role">text</span><div>Основной</div><span class="token-name" data-copy="#1A1A1A">--fd-text · #1A1A1A</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#5C5749"></div><div class="swatch-body"><span class="swatch-role">text</span><div>Вторичный</div><span class="token-name" data-copy="#5C5749">--fd-text-secondary · #5C5749</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#A39B87"></div><div class="swatch-body"><span class="swatch-role">text</span><div>Неактивный</div><span class="token-name" data-copy="#A39B87">--fd-text-disabled · #A39B87</span></div></div>
+        </div>
+
+        <h3 class="section-gap">Границы · border</h3>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#DCC8AD"></div><div class="swatch-body"><span class="swatch-role">border</span><div>Базовая</div><span class="token-name" data-copy="#DCC8AD">--fd-border · #DCC8AD</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#EAE1CF"></div><div class="swatch-body"><span class="swatch-role">border</span><div>Разделители</div><span class="token-name" data-copy="#EAE1CF">--fd-border-soft · #EAE1CF</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#B9A37F"></div><div class="swatch-body"><span class="swatch-role">border</span><div>Наведение</div><span class="token-name" data-copy="#B9A37F">--fd-border-strong · #B9A37F</span></div></div>
+        </div>
+
+        <h3 class="section-gap">Действия · action</h3>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#1F3D2E"></div><div class="swatch-body"><span class="swatch-role">action</span><div>Главное действие</div><span class="token-name" data-copy="#1F3D2E">--fd-primary · #1F3D2E</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#2A5440"></div><div class="swatch-body"><span class="swatch-role">action</span><div>Наведение</div><span class="token-name" data-copy="#2A5440">--fd-primary-hover · #2A5440</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#C86A4A"></div><div class="swatch-body"><span class="swatch-role">action</span><div>Терракота, декор</div><span class="token-name" data-copy="#C86A4A">--fd-accent · #C86A4A</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#A9502F"></div><div class="swatch-body"><span class="swatch-role">action</span><div>Терракота в тексте/кнопках</div><span class="token-name" data-copy="#A9502F">--fd-accent-strong · #A9502F</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#D4AF37"></div><div class="swatch-body"><span class="swatch-role">action</span><div>Золото, редкие метки</div><span class="token-name" data-copy="#D4AF37">--fd-gold · #D4AF37</span></div></div>
+        </div>
+
+        <h3 class="section-gap">Статусы · status</h3>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-color" style="background:#EEF2E8; border-left: 24px solid #44553A"></div><div class="swatch-body"><span class="swatch-role">status</span><div>Успех</div><span class="token-name" data-copy="#44553A">#44553A на #EEF2E8</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#FBF3E2; border-left: 24px solid #D89A3A"></div><div class="swatch-body"><span class="swatch-role">status</span><div>Предупреждение</div><span class="token-name" data-copy="#8A5B12">#8A5B12 на #FBF3E2</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#F9E7E3; border-left: 24px solid #A32E22"></div><div class="swatch-body"><span class="swatch-role">status</span><div>Ошибка</div><span class="token-name" data-copy="#A32E22">#A32E22 на #F9E7E3</span></div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#F6FFED; border-left: 24px solid #D9F7BE"></div><div class="swatch-body"><span class="swatch-role">status</span><div>Выделение данных</div><span class="token-name" data-copy="#F6FFED">#F6FFED / #D9F7BE</span></div></div>
+        </div>
+        <p class="muted small" style="margin-top: var(--fd-space-2)">
+          Выделение строк данных (#F6FFED / #D9F7BE) — зафиксированное решение по прототипу, сохранено в системе как отдельный токен.
+          Все текстовые пары «цвет на фоне» проходят контраст WCAG AA ≥ 4.5:1 (проверка — в README).
+        </p>
+      </div>
+
+      <div class="section-gap">
+        <h2>Типографика</h2>
+        <div class="card">
+          <div class="type-row"><span class="type-spec">Display · Cormorant Garamond Bold 40/1.2</span><span style="font-family: var(--fd-font-display); font-weight: 700; font-size: 40px; line-height: 1.2">Экран версии</span></div>
+          <div class="type-row"><span class="type-spec">H2 · Cormorant Bold 32/1.2</span><span style="font-family: var(--fd-font-display); font-weight: 700; font-size: 32px; line-height: 1.2">Поручение экспедитору</span></div>
+          <div class="type-row"><span class="type-spec">H3 · Cormorant Bold 20/1.2</span><span style="font-family: var(--fd-font-display); font-weight: 700; font-size: 20px; line-height: 1.2">Титул экспедитора</span></div>
+          <div class="type-row"><span class="type-spec">Body · Inter Regular 14/1.5</span><span style="font-size: 14px">Статус версии, реквизиты и якоря XSD — на одном экране.</span></div>
+          <div class="type-row"><span class="type-spec">Body secondary · Inter 14/1.5</span><span style="font-size: 14px; color: var(--fd-text-secondary)">Действует с 01.09.2026 · приложение № 1</span></div>
+          <div class="type-row"><span class="type-spec">Caption · Inter 12/1.5</span><span style="font-size: 12px; color: var(--fd-text-secondary)">Макет по EP_por_exp_5_01.xsd · данные вымышленные</span></div>
+          <div class="type-row"><span class="type-spec">Mono · Space Mono 13/1.5</span><span class="mono" style="font-size: 13px">Файл/Документ/ПорЭксп/СвГрузОт</span></div>
+        </div>
+        <p class="muted small" style="margin-top: var(--fd-space-3)">
+          Правило: заголовки и «бумажные» подписи — Cormorant Garamond; интерфейс и данные — Inter;
+          коды, XPath и идентификаторы — Space Mono. Насыщенности: 400 для текста, 500–600 для подписей действий, 700 для заголовков.
+        </p>
+      </div>
+
+      <div class="section-gap grid-2">
+        <div>
+          <h2>Отступы</h2>
+          <div class="card">
+            <div class="space-row"><span class="space-bar" style="width:4px"></span><span class="token-name">--fd-space-1 · 4</span></div>
+            <div class="space-row"><span class="space-bar" style="width:8px"></span><span class="token-name">--fd-space-2 · 8</span></div>
+            <div class="space-row"><span class="space-bar" style="width:12px"></span><span class="token-name">--fd-space-3 · 12</span></div>
+            <div class="space-row"><span class="space-bar" style="width:16px"></span><span class="token-name">--fd-space-4 · 16</span></div>
+            <div class="space-row"><span class="space-bar" style="width:24px"></span><span class="token-name">--fd-space-5 · 24</span></div>
+            <div class="space-row"><span class="space-bar" style="width:32px"></span><span class="token-name">--fd-space-6 · 32</span></div>
+            <div class="space-row"><span class="space-bar" style="width:48px"></span><span class="token-name">--fd-space-7 · 48</span></div>
+            <div class="space-row"><span class="space-bar" style="width:64px"></span><span class="token-name">--fd-space-8 · 64</span></div>
+            <p class="muted small" style="margin-top: var(--fd-space-3)">Шаг 4px. Внутри компонентов — 4–16, между блоками — 24–48, между разделами — 48–64.</p>
+          </div>
+        </div>
+        <div>
+          <h2>Сетка и адаптив</h2>
+          <div class="card">
+            <p><span class="token-name">--fd-container · 1080px</span> — контентная колонка, центрируется.</p>
+            <p><span class="token-name">--fd-breakpoint-narrow · 760px</span> — точка перестройки в одну колонку, как в Lo-Fi прототипе.</p>
+            <p class="muted small">Таблицы шире окна получают горизонтальный скролл внутри контейнера, страница — никогда.</p>
+          </div>
+          <h3 class="section-gap">Радиусы, границы, тени</h3>
+          <div class="card">
+            <p><span class="token-name">radius 4 / 8 / 12 / pill</span> — теги и коды · поля и кнопки · карточки и диалоги · бейджи и переключатели.</p>
+            <p><span class="token-name">shadow s / m / l</span> — тёплые зеленоватые тени: строка · карточка · диалог.</p>
+            <p class="muted small">Границы почти всегда 1px песочные; тени — только у парящих элементов.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-gap grid-2">
+        <div>
+          <h2>Иконки</h2>
+          <div class="card">
+            <p>Линейные, 1.5px, круглые окончания, размер 16–20px. В действиях — всегда с текстовой подписью.</p>
+            <div class="demo-row" style="font-size: 20px; color: var(--fd-primary)">
+              <span title="Поиск">⌕</span><span title="Якорь XSD">↗</span><span title="Раскрыть">▸</span><span title="Закрыть">×</span><span title="Успех">✓</span><span title="Предупреждение">⚠</span><span title="Добавить">+</span>
+            </div>
+            <p class="muted small">В р1 используется системный набор символов прототипа; выделенный иконочный шрифт — за пределами р1.</p>
+          </div>
+        </div>
+        <div>
+          <h2>Иллюстрации и motion</h2>
+          <div class="card">
+            <p>Иллюстративный стиль продукта — гравюры лендинга (гербарий, всадники, маги): чернильный штрих на креме. В сервисе иллюстрации не используются, только в пустых состояниях.</p>
+            <p><span class="token-name">motion: 120ms / 200ms, ease-out</span> — только наведения, раскрытия и появление тостов. Без декоративной анимации данных.</p>
+            <p class="muted small">При prefers-reduced-motion все переходы отключаются (реализовано в tokens.css).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-gap">
+        <h2>Карта референсов</h2>
+        <div class="card fd-table-scroll">
+          <table class="fd-table">
+            <thead><tr><th>Референс</th><th>Что берём</th><th>Токен / правило</th><th>Где применяем</th></tr></thead>
+            <tbody>
+              <tr><td>Реф. 7 · палитра и шрифты (зелёный/крем/терракота/золото, Cormorant Garamond)</td><td>Основная палитра и пара шрифтов</td><td class="token-name">--fd-bg, --fd-primary, --fd-accent, --fd-gold, --fd-text, --fd-font-display</td><td>Весь сайт и тема прототипа</td></tr>
+              <tr><td>Реф. 6 · палитра (шалфей, янтарь, крем) + Space Mono</td><td>Статусы успеха/предупреждения, моноширинный шрифт</td><td class="token-name">--fd-success, --fd-warning-accent, --fd-font-mono</td><td>Бейджи, алерты, коды/XPath</td></tr>
+              <tr><td>Реф. 4 · терракота/олива/персик</td><td>Глубина терракоты для текста</td><td class="token-name">--fd-accent-strong, --fd-accent-hover</td><td>Ссылки на источники, accent-кнопки</td></tr>
+              <tr><td>Реф. 8–10 · Modern UI Components</td><td>Формы компонентов: пилюли-бейджи, мягкие радиусы, карточки, состояния</td><td class="token-name">--fd-radius-*, --fd-shadow-*, набор состояний</td><td>Раздел «Компоненты»</td></tr>
+              <tr><td>Реф. 5 · MAPA (природа, солнце)</td><td>Характер: спокойная природная палитра, никакого «неона»</td><td>Принцип «Спокойная плотность»</td><td>Общие решения по цвету</td></tr>
+              <tr><td>Лендинг FormatDesk</td><td>Cormorant Garamond + Inter, кремовый фон, гравюры</td><td class="token-name">--fd-font-display, --fd-bg, стиль иллюстраций</td><td>Переход «лендинг → сервис» без разрыва</td></tr>
+              <tr><td>Lo-Fi прототип</td><td>Выделение строк, плотность таблиц, тексты</td><td class="token-name">--fd-selection-bg, --fd-selection-border</td><td>Экраны продукта</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================ КОМПОНЕНТЫ ============================ -->
+  <main class="page" data-page="komponenty" id="page-komponenty">
+    <div class="wrap">
+      <p class="kicker">Компоненты</p>
+      <h1>Библиотека компонентов</h1>
+      <p class="lead">
+        Компоненты, отмеченные <span class="fd-badge fd-badge--dark">прототип</span>, реально используются на экранах р1;
+        остальные — <span class="fd-badge fd-badge--neutral">базовый набор</span> для следующих релизов.
+        Все диалоги, меню, вкладки, формы и переключатели на этой странице работают.
+      </p>
+
+      <!-- Кнопки -->
+      <div class="section-gap">
+        <h2>Кнопки <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card">
+          <p class="muted small">Primary — одно главное действие на экране. Secondary — обычные действия. Ghost — действия в плотных списках. Accent — редкие действия с источниками. Danger — разрушающие действия, всегда с подтверждением.</p>
+          <div class="demo-row">
+            <button class="fd-btn fd-btn--primary">Принять группировку</button>
+            <button class="fd-btn fd-btn--secondary">Свернуть все группы</button>
+            <button class="fd-btn fd-btn--ghost">Показать коды</button>
+            <button class="fd-btn fd-btn--accent">Открыть приказ</button>
+            <button class="fd-btn fd-btn--danger">Отклонить черновик</button>
+          </div>
+          <div class="demo-row" style="margin-top: var(--fd-space-3)">
+            <button class="fd-btn fd-btn--primary fd-btn--s">Малая</button>
+            <button class="fd-btn fd-btn--primary">Средняя</button>
+            <button class="fd-btn fd-btn--primary fd-btn--l">Большая</button>
+            <button class="fd-btn fd-btn--primary" disabled>Неактивна</button>
+            <button class="fd-btn fd-btn--primary" data-loading-demo>Загрузить версию</button>
+          </div>
+          <p class="muted small" style="margin-top: var(--fd-space-3)">Состояния: default · hover · focus-visible (зелёное кольцо) · active · disabled · loading (последняя кнопка — нажмите).</p>
+        </div>
+      </div>
+
+      <!-- Ссылки -->
+      <div class="section-gap">
+        <h2>Ссылки <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card">
+          <p>
+            <a class="fd-link" href="#/komponenty">Якорь XSD · EP_por_exp_5_01.xsd</a> — внутренние переходы зелёные с подчёркиванием.
+            Ссылки на официальные источники помечаются стрелкой ↗ и открываются в новой вкладке:
+            <a class="fd-link" href="https://www.nalog.gov.ru/rn77/about_fts/docs/16627946/" target="_blank" rel="noreferrer">Открыть на nalog.gov.ru ↗</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Поля -->
+      <div class="section-gap">
+        <h2>Поля ввода <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card">
+          <div class="grid-2">
+            <div class="demo-col">
+              <div class="fd-field">
+                <label class="fd-label" for="inp-1">Номер приказа</label>
+                <input class="fd-input" id="inp-1" placeholder="ЕД-1-26/277@" />
+                <span class="fd-hint">Как в реквизитах на nalog.gov.ru</span>
+              </div>
+              <div class="fd-field fd-field--error">
+                <label class="fd-label" for="inp-2">Версия формата</label>
+                <input class="fd-input" id="inp-2" value="5.1" />
+                <span class="fd-hint">Версия указывается в формате 5.01 — проверьте разрядность.</span>
+              </div>
+              <div class="fd-field fd-field--success">
+                <label class="fd-label" for="inp-3">Дата приказа</label>
+                <input class="fd-input" id="inp-3" value="28.04.2026" />
+                <span class="fd-hint">Дата совпадает с реестром ФНС.</span>
+              </div>
+              <div class="fd-field">
+                <label class="fd-label" for="inp-4">Неактивное поле</label>
+                <input class="fd-input" id="inp-4" value="Заполняется из XSD" disabled />
+              </div>
+            </div>
+            <div class="demo-col">
+              <div class="fd-field">
+                <label class="fd-label" for="ta-1">Комментарий к группировке</label>
+                <textarea class="fd-textarea" id="ta-1" placeholder="Почему блок относится к титулу экспедитора"></textarea>
+              </div>
+              <div class="fd-field">
+                <label class="fd-label" for="sel-1">Титул</label>
+                <select class="fd-select" id="sel-1">
+                  <option>Титул клиента</option>
+                  <option selected>Титул экспедитора</option>
+                  <option>Отзыв поручения</option>
+                </select>
+              </div>
+              <div class="fd-search">
+                <span class="fd-search-icon" aria-hidden="true">⌕</span>
+                <input class="fd-input" type="search" placeholder="Поиск по реквизитам: код или наименование" aria-label="Поиск по реквизитам" />
+              </div>
+            </div>
+          </div>
+          <p class="muted small" style="margin-top: var(--fd-space-3)">У каждого поля — видимая подпись. Ошибка объясняет проблему и как исправить; успех — что именно проверено.</p>
+        </div>
+      </div>
+
+      <!-- Выбор -->
+      <div class="section-gap">
+        <h2>Выбор: checkbox, radio, switch <span class="fd-badge fd-badge--neutral">базовый набор</span></h2>
+        <div class="card grid-3">
+          <div class="demo-col">
+            <label class="fd-check"><input type="checkbox" checked /><span class="box"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><path d="M1 4.5L4 7.5L10 1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span class="txt">Показывать коды реквизитов</span></label>
+            <label class="fd-check"><input type="checkbox" /><span class="box"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><path d="M1 4.5L4 7.5L10 1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span class="txt">Только обязательные</span></label>
+            <label class="fd-check"><input type="checkbox" disabled /><span class="box"><svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true"><path d="M1 4.5L4 7.5L10 1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span class="txt">Недоступно в р1</span></label>
+          </div>
+          <div class="demo-col">
+            <label class="fd-check fd-radio"><input type="radio" name="r1" checked /><span class="box"></span><span class="txt">По титулам</span></label>
+            <label class="fd-check fd-radio"><input type="radio" name="r1" /><span class="box"></span><span class="txt">По событиям</span></label>
+            <label class="fd-check fd-radio"><input type="radio" name="r1" disabled /><span class="box"></span><span class="txt">По XSD (недоступно)</span></label>
+          </div>
+          <div class="demo-col">
+            <label class="fd-switch"><input type="checkbox" checked /><span class="track"></span><span class="txt">Якоря XSD</span></label>
+            <label class="fd-switch"><input type="checkbox" /><span class="track"></span><span class="txt">Компактный вид</span></label>
+            <label class="fd-switch"><input type="checkbox" disabled /><span class="track"></span><span class="txt">AI-черновик (скоро)</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Навигация -->
+      <div class="section-gap">
+        <h2>Навигация <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card">
+          <div class="fd-tabs" data-panels="comp-tabs-panels" role="tablist" aria-label="Пример вкладок">
+            <button class="fd-tab" role="tab" aria-selected="true" aria-controls="ct-1" id="ctb-1">Реквизиты</button>
+            <button class="fd-tab" role="tab" aria-selected="false" aria-controls="ct-2" id="ctb-2">Макет</button>
+            <button class="fd-tab" role="tab" aria-selected="false" aria-controls="ct-3" id="ctb-3">История версий</button>
+          </div>
+          <div id="comp-tabs-panels">
+            <div class="fd-tabpanel" id="ct-1" role="tabpanel" aria-labelledby="ctb-1"><p class="muted">Дерево реквизитов с группировкой по титулу — основной вид экрана версии. Вкладки листаются стрелками ← →.</p></div>
+            <div class="fd-tabpanel" id="ct-2" role="tabpanel" aria-labelledby="ctb-2" hidden><p class="muted">Макет документа для дизайнера карточки — те же группы полей.</p></div>
+            <div class="fd-tabpanel" id="ct-3" role="tabpanel" aria-labelledby="ctb-3" hidden><p class="muted">История версий формата. В р1 показывается только действующая версия.</p></div>
+          </div>
+          <div class="section-gap">
+            <nav class="fd-crumbs" aria-label="Хлебные крошки">
+              <a href="#/ekrany">Каталог форматов</a><span class="sep">›</span>
+              <a href="#/ekrany">Поручение экспедитору</a><span class="sep">›</span>
+              <span aria-current="page">Версия 5.01</span>
+            </nav>
+          </div>
+          <div class="section-gap">
+            <div class="fd-pagination" aria-label="Пагинация">
+              <button class="fd-page" disabled aria-label="Назад">‹</button>
+              <button class="fd-page" data-page="1" aria-current="page">1</button>
+              <button class="fd-page" data-page="2">2</button>
+              <button class="fd-page" data-page="3">3</button>
+              <button class="fd-page" aria-label="Вперёд">›</button>
+            </div>
+            <p class="muted small" style="margin-top: var(--fd-space-2)">В р1 каталог короткий, пагинация — базовый набор.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточки, списки, таблицы -->
+      <div class="section-gap">
+        <h2>Карточки, списки и таблицы <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Карточка формата</h3>
+            <p class="muted small">Поверхность белая, граница песочная, радиус 12, тень только при парении.</p>
+            <div class="fd-list" style="margin-top: var(--fd-space-3)">
+              <div class="fd-list-item"><span>Поручение экспедитору</span><span class="fd-badge fd-badge--success">Действует</span></div>
+              <div class="fd-list-item"><span>Экспедиторская расписка</span><span class="fd-badge fd-badge--success">Действует</span></div>
+              <div class="fd-list-item"><span>Складская расписка</span><span class="fd-badge fd-badge--neutral">Вне фокуса р1</span></div>
+            </div>
+          </div>
+          <div class="card fd-table-scroll">
+            <h3>Таблица данных</h3>
+            <table class="fd-table">
+              <thead><tr><th>Формат ЭПД</th><th>Версия</th><th>Статус</th></tr></thead>
+              <tbody>
+                <tr><td>Поручение экспедитору</td><td class="mono">5.01</td><td><span class="fd-badge fd-badge--success">Действует с 01.09.2026</span></td></tr>
+                <tr class="selected"><td>Экспедиторская расписка</td><td class="mono">5.01</td><td><span class="fd-badge fd-badge--success">Действует с 01.09.2026</span></td></tr>
+                <tr><td>Складская расписка</td><td class="mono">5.01</td><td><span class="fd-badge fd-badge--success">Действует с 01.09.2026</span></td></tr>
+              </tbody>
+            </table>
+            <p class="muted small" style="margin-top: var(--fd-space-2)">Выбранная строка — #F6FFED (зафиксированное решение по прототипу).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Бейджи -->
+      <div class="section-gap">
+        <h2>Бейджи и подсказки <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card">
+          <div class="demo-row">
+            <span class="fd-badge fd-badge--success">Действует</span>
+            <span class="fd-badge fd-badge--warning">Заменяется с 01.03.2027</span>
+            <span class="fd-badge fd-badge--error">Отменён</span>
+            <span class="fd-badge fd-badge--accent">Приложение № 1</span>
+            <span class="fd-badge fd-badge--dark">AI-черновик</span>
+            <span class="fd-badge fd-badge--neutral">5.01</span>
+          </div>
+          <p style="margin-top: var(--fd-space-4)">
+            Подсказка появляется при наведении и при фокусе — например, у кнопки якоря:
+            <span class="fd-tip">
+              <button class="fd-btn fd-btn--ghost fd-btn--s" aria-label="Якорь XSD">↗ XSD</button>
+              <span class="fd-tip-bubble" role="tooltip">Откроет XSD на nalog.gov.ru в новой вкладке</span>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Обратная связь -->
+      <div class="section-gap">
+        <h2>Уведомления и прогресс <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card demo-col">
+          <div class="fd-alert fd-alert--success" role="status"><p><span class="fd-alert-title">Группировка принята.</span>Блок «Сведения о грузоотправителе» добавлен в черновик постановки.</p><button class="close" aria-label="Закрыть">×</button></div>
+          <div class="fd-alert fd-alert--warning" role="status"><p><span class="fd-alert-title">Версия заменяется.</span>С 01.03.2027 действует редакция 5.02 — сверьте постановку до этой даты.</p><button class="close" aria-label="Закрыть">×</button></div>
+          <div class="fd-alert fd-alert--error" role="alert"><p><span class="fd-alert-title">Не удалось загрузить данные версии.</span>Проверьте соединение и попробуйте ещё раз. Если ошибка повторяется — откройте приказ на nalog.gov.ru.</p><button class="close" aria-label="Закрыть">×</button></div>
+          <div class="demo-row">
+            <button class="fd-btn fd-btn--secondary" data-toast="Изменения сохранены." data-toast-kind="success">Тост «успех»</button>
+            <button class="fd-btn fd-btn--secondary" data-toast="Соединение восстановлено." data-toast-kind="info">Тост «инфо»</button>
+          </div>
+          <div class="fd-progress">
+            <div class="meta"><span>Разбор XSD</span><span>72%</span></div>
+            <div class="bar"><div class="fill" style="width: 72%"></div></div>
+          </div>
+          <div class="fd-progress">
+            <div class="meta"><span>Перенос в постановку</span><span>45%</span></div>
+            <div class="bar"><div class="fill fill--accent" style="width: 45%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Загрузка, пусто, ошибка -->
+      <div class="section-gap">
+        <h2>Загрузка, пусто, ошибка <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="grid-3">
+          <div class="card" style="text-align: center">
+            <div class="fd-spinner" style="margin: var(--fd-space-4) auto" role="status" aria-label="Загрузка"></div>
+            <p class="muted small">Спиннер загрузки данных версии.</p>
+          </div>
+          <div class="card">
+            <div class="demo-col">
+              <div class="fd-skeleton" style="height: 14px; width: 70%"></div>
+              <div class="fd-skeleton" style="height: 14px; width: 90%"></div>
+              <div class="fd-skeleton" style="height: 14px; width: 55%"></div>
+            </div>
+            <p class="muted small" style="margin-top: var(--fd-space-3)">Скелетон для строк таблицы.</p>
+          </div>
+          <div class="card fd-empty">
+            <div class="fd-empty-icon" aria-hidden="true">☰</div>
+            <p><strong>По запросу ничего не найдено.</strong></p>
+            <p class="small">Проверьте код реквизита или сбросьте фильтр «Только обязательные».</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Диалог и меню -->
+      <div class="section-gap">
+        <h2>Диалог и меню <span class="fd-badge fd-badge--dark">прототип</span></h2>
+        <div class="card">
+          <div class="demo-row">
+            <button class="fd-btn fd-btn--primary" data-dialog-open="dlg-anchor">Открыть диалог якоря</button>
+            <div class="fd-menu-wrap">
+              <button class="fd-btn fd-btn--secondary" data-menu-button aria-haspopup="menu" aria-expanded="false">Действия с версией ▾</button>
+              <div class="fd-menu" role="menu" hidden>
+                <button role="menuitem">Скопировать ссылку на версию</button>
+                <button role="menuitem">Открыть приказ на nalog.gov.ru ↗</button>
+                <button role="menuitem">Скачать архив XSD ↗</button>
+              </div>
+            </div>
+          </div>
+          <p class="muted small" style="margin-top: var(--fd-space-3)">
+            Диалог: закрывается по Esc и клику по фону, фокус возвращается к кнопке, Tab не выпускает фокус наружу.
+            Меню: открывается по клику и стрелке ↓, пункты листаются стрелками, закрывается по Esc с возвратом фокуса.
+          </p>
+        </div>
+      </div>
+
+      <!-- Форма целиком -->
+      <div class="section-gap">
+        <h2>Форма с проверкой <span class="fd-badge fd-badge--neutral">базовый набор</span></h2>
+        <div class="card">
+          <form id="demo-form" novalidate>
+            <div class="fd-field" style="margin-bottom: var(--fd-space-3)">
+              <label class="fd-label" for="demo-form-input">Номер приказа</label>
+              <input class="fd-input" id="demo-form-input" placeholder="ЕД-1-26/277@" autocomplete="off" />
+              <span class="fd-hint">Оставьте пустым и отправьте — покажем состояние ошибки.</span>
+            </div>
+            <div class="demo-row">
+              <button type="submit" class="fd-btn fd-btn--primary">Сохранить в черновик</button>
+              <button type="reset" class="fd-btn fd-btn--ghost">Очистить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Диалог (общий, вне страниц) -->
+  <div class="fd-dialog-wrap" id="dlg-anchor" hidden>
+    <div class="fd-dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-anchor-title">
+      <button class="x" data-dialog-close aria-label="Закрыть диалог">×</button>
+      <h3 id="dlg-anchor-title">Якорь XSD / приказ</h3>
+      <p class="mono small" style="background: var(--fd-surface-warm); padding: var(--fd-space-2) var(--fd-space-3); border-radius: var(--fd-radius-m);">EP_por_exp_5_01.xsd · приказ ФНС от 28.04.2026 № ЕД-1-26/277@, приложение № 1</p>
+      <p class="small">Путь в схеме: <span class="mono">Файл/Документ/ПорЭксп/СвГрузОт/ИННЮЛ</span></p>
+      <div class="actions">
+        <button class="fd-btn fd-btn--ghost" data-dialog-close>Закрыть</button>
+        <a class="fd-btn fd-btn--primary" href="https://www.nalog.gov.ru/rn77/about_fts/docs/16627946/" target="_blank" rel="noreferrer">Открыть источник ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-zone" aria-live="polite"></div>
+
+  <!-- ============================ ГОЛОС БРЕНДА ============================ -->
+  <main class="page" data-page="golos" id="page-golos">
+    <div class="wrap">
+      <p class="kicker">Голос бренда</p>
+      <h1>Как мы пишем</h1>
+      <p class="lead">
+        Отдельного документа о голосе в корпусе нет, поэтому принципы собраны из PRD, записей интервью
+        и текстов Lo-Fi прототипа. База — ясный спокойный язык без канцелярита. Примеры ниже —
+        реальные тексты продукта, а не выдуманные иллюстрации.
+      </p>
+
+      <div class="section-gap grid-2">
+        <div class="card">
+          <h3>1. Говори о действии пользователя</h3>
+          <p>Глагол называет результат, а не механику: «Принять группировку», а не «Выполнить операцию».</p>
+        </div>
+        <div class="card">
+          <h3>2. Опирайся на источник</h3>
+          <p>Вместо «система считает» — «по приказу от 28.04.2026 № ЕД-1-26/277@». Доверие через ссылку, а не через тон.</p>
+        </div>
+        <div class="card">
+          <h3>3. Ошибка = проблема + следующий шаг</h3>
+          <p>Без «что-то пошло не так» и без вины пользователя. Всегда есть, что сделать дальше.</p>
+        </div>
+        <div class="card">
+          <h3>4. Термины приказа — не свои</h3>
+          <p>«Титул экспедитора», «реквизит», «множественность 1..1» — язык ФНС, а не придуманные метафоры.</p>
+        </div>
+      </div>
+
+      <div class="section-gap">
+        <h2>Подходит / не подходит</h2>
+
+        <h3>Заголовки</h3>
+        <div class="voice-pair">
+          <div class="voice-do"><span class="voice-tag">Подходит</span>«Поручение экспедитору · формат 5.01»</div>
+          <div class="voice-dont"><span class="voice-tag">Не подходит</span>«Карточка документа №247»</div>
+        </div>
+
+        <h3>Подписи действий</h3>
+        <div class="voice-pair">
+          <div class="voice-do"><span class="voice-tag">Подходит</span>«Принять группировку», «Открыть на nalog.gov.ru ↗»</div>
+          <div class="voice-dont"><span class="voice-tag">Не подходит</span>«OK», «Подтвердить», «Нажмите сюда»</div>
+        </div>
+
+        <h3>Подсказки</h3>
+        <div class="voice-pair">
+          <div class="voice-do"><span class="voice-tag">Подходит</span>«Поиск по реквизитам: код или наименование»</div>
+          <div class="voice-dont"><span class="voice-tag">Не подходит</span>«Введите поисковый запрос в поле»</div>
+        </div>
+
+        <h3>Ошибки</h3>
+        <div class="voice-pair">
+          <div class="voice-do"><span class="voice-tag">Подходит</span>«Не удалось загрузить данные версии. Проверьте соединение и попробуйте ещё раз.»</div>
+          <div class="voice-dont"><span class="voice-tag">Не подходит</span>«Ошибка 500. Обратитесь к администратору.»</div>
+        </div>
+
+        <h3>Успех</h3>
+        <div class="voice-pair">
+          <div class="voice-do"><span class="voice-tag">Подходит</span>«Группировка принята. Блок добавлен в черновик постановки.»</div>
+          <div class="voice-dont"><span class="voice-tag">Не подходит</span>«Операция успешно выполнена!»</div>
+        </div>
+
+        <h3>Статусы и даты</h3>
+        <div class="voice-pair">
+          <div class="voice-do"><span class="voice-tag">Подходит</span>«Действует с 01.09.2026»</div>
+          <div class="voice-dont"><span class="voice-tag">Не подходит</span>«Актуальный на данный момент времени»</div>
+        </div>
+      </div>
+
+      <div class="section-gap card">
+        <h3>Числа, даты, коды</h3>
+        <p>Даты — 28.04.2026, версии — 5.01, множественность — 1..1 / 0..∞. Коды реквизитов и XPath — моноширинным шрифтом: <span class="mono">ИННЮЛ</span>, <span class="mono">Файл/Документ/ПорЭксп</span>. Тысячи не разделяем, если это коды; суммы и счётчики — с неразрывным пробелом: 381 поле.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================ ЭКРАНЫ ПРОДУКТА ============================ -->
+  <main class="page" data-page="ekrany" id="page-ekrany">
+    <div class="wrap">
+      <p class="kicker">Экраны продукта</p>
+      <h1>Lo-Fi прототип в новой теме</h1>
+      <p class="lead">
+        Основные экраны исходного Lo-Fi (релиз 1), перенесённые в визуальный язык дизайн-системы.
+        Сценарии, данные и логика не изменились — заменены только токены оформления.
+        Исходник: <span class="mono">/app/prototip/index.html</span>;
+        тема: <span class="mono">/project/design-system/proto-theme.css</span> — использует те же переменные tokens.css.
+      </p>
+
+      <div class="card section-gap fd-table-scroll">
+        <h3>Карта экранов и сценариев</h3>
+        <table class="fd-table screen-map">
+          <thead><tr><th>ID</th><th>Экран / состояние</th><th>Сценарий и переход</th></tr></thead>
+          <tbody>
+            <tr><td>SCR-CAT</td><td>Каталог форматов ЭПД</td><td>Стартовый экран. Клик по «Поручение экспедитору» → SCR-VER. Расписки видны, но вне фокуса р1 (некликабельны). Ссылки PDF/XSD → nalog.gov.ru.</td></tr>
+            <tr><td>SCR-VER</td><td>Экран версии формата</td><td>Реквизиты приказа, номер и статус версии, ссылка на источник. Вкладки: реквизиты и макет.</td></tr>
+            <tr><td>SCR-REQ</td><td>Реквизиты: дерево групп</td><td>Дерево реквизитов по титулам с поиском, раскрытием групп и выбором строки. Клик по якорю → SCR-ANC.</td></tr>
+            <tr><td>SCR-ANC</td><td>Модалка «Якорь XSD / приказ»</td><td>Путь в XSD и реквизиты приказа для сверки. Закрывается по Esc, возвращает фокус.</td></tr>
+            <tr><td>SCR-SKL</td><td>Макет документа (каркас S1)</td><td>Вкладка «Макет»: те же группы полей в виде документа — без кодов реквизитов.</td></tr>
+            <tr><td>—</td><td>Загрузка и ошибка</td><td>Состояния загрузки и ошибки данных версии (демонстрационные: срабатывают при сбое загрузки данных).</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-gap">
+        <div class="demo-row" style="justify-content: space-between; margin-bottom: var(--fd-space-3)">
+          <h2 style="margin: 0">Рабочие экраны</h2>
+          <a class="fd-btn fd-btn--secondary" href="screens/prototip/index.html" target="_blank" rel="noreferrer">Открыть в отдельной вкладке ↗</a>
+        </div>
+        <p class="muted small">Кликните строку «Поручение экспедитору» в каталоге — откроется экран версии. Всё внутри рамки — работающий прототип, не скриншот.</p>
+        <div class="proto-frame-wrap" style="margin-top: var(--fd-space-3)">
+          <iframe class="proto-frame" src="screens/prototip/index.html" title="FormatDesk · экраны продукта в теме дизайн-системы"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
