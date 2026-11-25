@@ -1,0 +1,194 @@
+/* ==========================================================================
+   FormatDesk · тема дизайн-системы для Lo-Fi прототипа (р1)
+   Переопределяет инлайн-CSS прототипа по каскаду (подключается после <style>).
+   Все значения — только из tokens.css. Сценарии, данные и логика не тронуты.
+   Выделение строк (#F6FFED / #D9F7BE) — решение пользователя, сохранено.
+   ========================================================================== */
+
+@import url("tokens.css");
+
+body {
+  font-family: var(--fd-font-text);
+  font-size: var(--fd-text-m);
+  color: var(--fd-text);
+  background: var(--fd-bg);
+}
+
+/* ---------- Шапка ---------- */
+.hdr {
+  background: var(--fd-surface);
+  border-bottom: 1px solid var(--fd-border);
+  padding: var(--fd-space-3) var(--fd-space-4);
+}
+.hdr-title {
+  font-family: var(--fd-font-display);
+  font-weight: var(--fd-weight-bold);
+  font-size: var(--fd-text-xl);
+  line-height: var(--fd-leading-tight);
+}
+.hdr-sub { color: var(--fd-text-secondary); font-size: var(--fd-text-xs); }
+
+.content { max-width: var(--fd-container); padding: var(--fd-space-5) var(--fd-space-4); }
+
+.muted { color: var(--fd-text-secondary); }
+.empty { color: var(--fd-text-secondary); }
+
+.code {
+  font-family: var(--fd-font-mono);
+  background: rgba(31, 61, 46, .08);
+  border-radius: var(--fd-radius-s);
+}
+
+/* ---------- Ссылки ---------- */
+.link { color: var(--fd-primary); }
+.link:hover { color: var(--fd-primary-hover); }
+.link:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); border-radius: var(--fd-radius-s); }
+
+.icon-btn {
+  color: var(--fd-accent-strong);
+  border-radius: var(--fd-radius-s);
+  transition: background var(--fd-motion-fast) var(--fd-motion-ease);
+}
+.icon-btn:hover { background: var(--fd-accent-soft); }
+.icon-btn:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); }
+
+/* ---------- Теги статуса ---------- */
+.tag {
+  background: var(--fd-success-bg);
+  border: 1px solid var(--fd-success-border);
+  color: var(--fd-success);
+  border-radius: var(--fd-radius-pill);
+}
+
+/* ---------- Кнопки ---------- */
+.btn {
+  border: 1px solid var(--fd-border);
+  background: var(--fd-surface);
+  border-radius: var(--fd-radius-m);
+  color: var(--fd-text);
+  transition: border-color var(--fd-motion-fast) var(--fd-motion-ease),
+              color var(--fd-motion-fast) var(--fd-motion-ease),
+              background var(--fd-motion-fast) var(--fd-motion-ease);
+}
+.btn:hover { border-color: var(--fd-primary); color: var(--fd-primary); }
+.btn:active { background: var(--fd-primary-soft); }
+.btn:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); border-color: var(--fd-primary); }
+
+/* ---------- Таблицы ---------- */
+.tbl th {
+  background: var(--fd-surface-warm);
+  border-bottom: 1px solid var(--fd-border);
+}
+.tbl td { border-bottom: 1px solid var(--fd-border-soft); }
+.tbl-small th, .tbl-small td { border-color: var(--fd-border-soft); }
+.row-click:hover > td { background: var(--fd-surface-sunken); }
+.row-click:focus-visible { outline: none; box-shadow: inset var(--fd-focus-ring); }
+
+.desc th { background: var(--fd-surface-warm); border-color: var(--fd-border-soft); }
+.desc td { border-color: var(--fd-border-soft); }
+
+/* ---------- Поля ввода ---------- */
+.inp {
+  border: 1px solid var(--fd-border);
+  border-radius: var(--fd-radius-m);
+  background: var(--fd-surface);
+  color: var(--fd-text);
+}
+.inp::placeholder { color: var(--fd-text-disabled); }
+.inp:hover { border-color: var(--fd-border-strong); }
+.inp:focus { outline: none; border-color: var(--fd-primary); box-shadow: var(--fd-focus-ring); }
+
+/* ---------- Дерево реквизитов ---------- */
+.req-tree .req-depth-0 > td { background: var(--fd-surface); }
+.req-tree .req-depth-1 > td { background: var(--fd-surface-warm); }
+.req-tree .req-depth-2 > td { background: #F3EEE1; }
+.req-tree .req-depth-3 > td { background: #EDE6D4; }
+.req-tree tr.row-sel > td { background: var(--fd-selection-bg); }
+.req-tree tr:hover > td { background: var(--fd-surface-sunken); }
+.req-tree tr.row-sel:hover > td { background: var(--fd-selection-bg); }
+.req-tree .req-depth-0 > td:first-child { border-left: 3px solid var(--fd-border-strong); }
+.req-tree tr.row-sel > td:first-child { border-left-color: var(--fd-success); }
+
+.exp-btn {
+  border: 1px solid var(--fd-border);
+  background: var(--fd-surface);
+  border-radius: var(--fd-radius-s);
+  transition: transform var(--fd-motion-fast) var(--fd-motion-ease),
+              border-color var(--fd-motion-fast) var(--fd-motion-ease);
+}
+.exp-btn:hover { border-color: var(--fd-primary); }
+.exp-btn:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); }
+
+/* ---------- Вкладки и сегменты ---------- */
+.tabs-tab { color: var(--fd-text-secondary); }
+.tabs-tab:hover { color: var(--fd-text); }
+.tabs-tab.active { color: var(--fd-primary); border-bottom-color: var(--fd-primary); }
+.tabs-tab:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); }
+
+.seg { background: rgba(31, 61, 46, .07); border-radius: var(--fd-radius-m); }
+.seg-item { color: var(--fd-text-secondary); border-radius: var(--fd-radius-s); }
+.seg-item.active { background: var(--fd-surface); color: var(--fd-text); box-shadow: var(--fd-shadow-s); }
+.seg-item:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); }
+
+/* ---------- Экран версии ---------- */
+.ver-title {
+  font-family: var(--fd-font-display);
+  font-weight: var(--fd-weight-bold);
+  font-size: var(--fd-text-2xl);
+  line-height: var(--fd-leading-tight);
+}
+
+/* ---------- Модалка ---------- */
+.modal-wrap { background: rgba(26, 26, 26, .5); }
+.modal {
+  background: var(--fd-surface);
+  border-radius: var(--fd-radius-l);
+  box-shadow: var(--fd-shadow-l);
+  border: 1px solid var(--fd-border-soft);
+}
+.modal-title { font-family: var(--fd-font-display); font-weight: var(--fd-weight-bold); font-size: var(--fd-text-xl); }
+.modal-close { color: var(--fd-text-secondary); border-radius: var(--fd-radius-s); }
+.modal-close:hover { color: var(--fd-text); }
+.modal-close:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); }
+
+/* ---------- Аккордеон ---------- */
+.acc { border-top-color: var(--fd-border-soft); }
+.acc-item { border-bottom-color: var(--fd-border-soft); }
+.acc-head { transition: background var(--fd-motion-fast) var(--fd-motion-ease); border-radius: var(--fd-radius-s); }
+.acc-head:hover { background: var(--fd-surface-warm); }
+.acc-head:focus-visible { outline: none; box-shadow: var(--fd-focus-ring); }
+.acc-arrow { color: var(--fd-text-secondary); }
+
+/* ---------- Макет документа («бумага») ---------- */
+.mk-sheet {
+  background: var(--fd-surface);
+  border: 1px solid var(--fd-border);
+  border-radius: var(--fd-radius-s);
+  box-shadow: var(--fd-shadow-m);
+}
+.mk-head-title { font-family: var(--fd-font-display); font-weight: var(--fd-weight-bold); font-size: var(--fd-text-xl); color: var(--fd-text); }
+.mk-head-num { color: var(--fd-text-secondary); }
+.mk-hr { border-top-color: var(--fd-border); }
+.mk-sec-title { color: var(--fd-text); }
+.mk-count, .mk-rep-cap { color: var(--fd-text-secondary); }
+.mk-h { color: var(--fd-text); }
+.mk-h3 { color: var(--fd-text-secondary); }
+.mkf { border-bottom-color: var(--fd-surface-warm); }
+.mkf-label { color: var(--fd-text-secondary); }
+.mkf-value { color: var(--fd-text); }
+.mk-card-title { color: var(--fd-text-secondary); }
+.mk-sig-line { border-bottom-color: var(--fd-text-secondary); }
+.mk-sig-note, .mk-foot { color: var(--fd-text-secondary); }
+
+/* ---------- Состояния загрузки и ошибки ---------- */
+.spinner { border-color: var(--fd-border); border-top-color: var(--fd-primary); }
+.state-error {
+  border: 1px solid var(--fd-error-border);
+  background: var(--fd-error-bg);
+  color: var(--fd-error);
+  border-radius: var(--fd-radius-m);
+}
+.state-error .note { color: var(--fd-text-secondary); }
+
+/* ---------- Выделение текста ---------- */
+::selection { background: var(--fd-accent-soft); }

@@ -1,0 +1,120 @@
+/* ==========================================================================
+   FormatDesk Design System · Токены (единственный источник значений)
+   Машинно-читаемая копия — tokens.json
+   Происхождение: см. README.md → «Карта референсов»
+   ========================================================================== */
+
+:root {
+  /* ---------- Цвет: фоны и поверхности ---------- */
+  --fd-bg: #F5F2EB;             /* фон страницы — тёплый крем (реф. 7) */
+  --fd-surface: #FFFFFF;        /* карточки, таблицы, диалоги */
+  --fd-surface-sunken: #EFECE2; /* утопленные зоны, фон лендинга */
+  --fd-surface-warm: #FAF7EF;   /* шапки таблиц, чередование строк */
+
+  /* ---------- Цвет: текст ---------- */
+  --fd-text: #1A1A1A;           /* основной текст (реф. 7) */
+  --fd-text-secondary: #5C5749; /* вторичный текст, подписи */
+  --fd-text-disabled: #A39B87;  /* неактивный текст */
+
+  /* ---------- Цвет: границы ---------- */
+  --fd-border: #DCC8AD;         /* базовая граница — песок (реф. 7) */
+  --fd-border-soft: #EAE1CF;    /* разделители внутри поверхностей */
+  --fd-border-strong: #B9A37F;  /* граница при наведении/акценте */
+
+  /* ---------- Цвет: действия ---------- */
+  --fd-primary: #1F3D2E;        /* главное действие — глубокий зелёный (реф. 7) */
+  --fd-primary-hover: #2A5440;
+  --fd-primary-active: #173129;
+  --fd-on-primary: #FFFFFF;
+  --fd-primary-soft: #E4EBE2;   /* мягкая зелёная подложка (выбранные вкладки) */
+
+  --fd-accent: #C86A4A;         /* терракота — декор, иконки (реф. 7) */
+  --fd-accent-strong: #A9502F;  /* терракота для текста/кнопок (контраст ≥ 4.5) */
+  --fd-accent-hover: #8F4024;
+  --fd-accent-soft: #F6E3D8;    /* мягкая терракотовая подложка */
+
+  --fd-gold: #D4AF37;           /* золото — редкие метки (реф. 7) */
+
+  /* ---------- Цвет: статусы ---------- */
+  --fd-success: #44553A;        /* текст успеха — шалфей (реф. 6) */
+  --fd-success-bg: #EEF2E8;
+  --fd-success-border: #C6D2B8;
+  --fd-warning: #8A5B12;        /* текст предупреждения */
+  --fd-warning-accent: #D89A3A; /* янтарь — заливки, иконки (реф. 6) */
+  --fd-warning-bg: #FBF3E2;
+  --fd-warning-border: #EAD3A6;
+  --fd-error: #A32E22;          /* текст ошибки (тёмная терракота-красный) */
+  --fd-error-bg: #F9E7E3;
+  --fd-error-border: #E5B7AF;
+
+  /* ---------- Цвет: выделение данных (решение пользователя, не менять) ---------- */
+  --fd-selection-bg: #F6FFED;   /* выбранная строка дерева реквизитов */
+  --fd-selection-border: #D9F7BE;
+
+  /* ---------- Типографика ---------- */
+  --fd-font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --fd-font-text: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fd-font-mono: "Space Mono", ui-monospace, Consolas, monospace;
+
+  --fd-text-xs: 12px;
+  --fd-text-s: 13px;
+  --fd-text-m: 14px;   /* базовый размер интерфейса */
+  --fd-text-l: 16px;
+  --fd-text-xl: 20px;
+  --fd-text-2xl: 24px;
+  --fd-text-3xl: 32px;
+  --fd-text-4xl: 40px;
+
+  --fd-leading-tight: 1.2;
+  --fd-leading-base: 1.5;
+  --fd-leading-loose: 1.65;
+
+  --fd-weight-regular: 400;
+  --fd-weight-medium: 500;
+  --fd-weight-semibold: 600;
+  --fd-weight-bold: 700;
+
+  /* ---------- Отступы (шаг 4px) ---------- */
+  --fd-space-1: 4px;
+  --fd-space-2: 8px;
+  --fd-space-3: 12px;
+  --fd-space-4: 16px;
+  --fd-space-5: 24px;
+  --fd-space-6: 32px;
+  --fd-space-7: 48px;
+  --fd-space-8: 64px;
+
+  /* ---------- Сетка ---------- */
+  --fd-container: 1080px;
+  --fd-breakpoint-narrow: 760px; /* как в Lo-Fi прототипе */
+
+  /* ---------- Радиусы ---------- */
+  --fd-radius-s: 4px;
+  --fd-radius-m: 8px;
+  --fd-radius-l: 12px;
+  --fd-radius-pill: 999px;
+
+  /* ---------- Тени (тёплые, зеленоватые) ---------- */
+  --fd-shadow-s: 0 1px 2px rgba(26, 26, 26, .07);
+  --fd-shadow-m: 0 4px 16px rgba(31, 61, 46, .10);
+  --fd-shadow-l: 0 12px 40px rgba(31, 61, 46, .16);
+
+  /* ---------- Фокус ---------- */
+  --fd-focus-ring: 0 0 0 3px rgba(31, 61, 46, .25);
+
+  /* ---------- Motion ---------- */
+  --fd-motion-fast: 120ms;
+  --fd-motion-base: 200ms;
+  --fd-motion-ease: cubic-bezier(.2, .7, .3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --fd-motion-fast: 0ms;
+    --fd-motion-base: 0ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
