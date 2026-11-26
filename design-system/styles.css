@@ -463,9 +463,15 @@ code, .mono { font-family: var(--fd-font-mono); font-size: .92em; }
 .illu-grid img { width: 100%; display: block; }
 .illu-grid figcaption { padding: var(--fd-space-2) var(--fd-space-3); font-size: var(--fd-text-xs); color: var(--fd-text-secondary); }
 
+/* ---------- Маскот ---------- */
+.mascot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--fd-space-3); margin-top: var(--fd-space-3); }
+.mascot-tile { border: 1px solid var(--fd-border-soft); border-radius: var(--fd-radius-l); background: var(--fd-surface); padding: var(--fd-space-4); display: flex; align-items: center; justify-content: center; min-height: 220px; }
+.mascot-tile--dark { background: var(--fd-primary); }
+.mascot-tile img { width: 200px; max-width: 70%; height: auto; }
+
 /* ---------- Адаптация ---------- */
 @media (max-width: 860px) {
-  .grid-2, .grid-3, .hero-preview, .voice-pair, .logo-grid, .spot-grid, .illu-grid { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .hero-preview, .voice-pair, .logo-grid, .spot-grid, .illu-grid, .mascot-grid { grid-template-columns: 1fr; }
   .type-spec { flex-basis: 140px; }
 }
 @media (max-width: 760px) {
