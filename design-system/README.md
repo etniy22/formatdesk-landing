@@ -25,7 +25,7 @@ python3 -m http.server 8901
 | `tokens.css` | Единственный источник значений — CSS-переменные |
 | `tokens.json` | Машинно-читаемая копия токенов |
 | `styles.css` | Библиотека компонентов `.fd-*` и стили сайта |
-| `assets/` | Фирменная графика: гравюрный логотип (`logo.svg`, `logo-mark.svg`, `favicon.svg`), маскот — колдунья Версия в двух позах (`mascot-pechat.webp`, `mascot-lupa.webp`), спот-иллюстрации пустых состояний (`empty-search.svg`, `empty-archive.svg`, `error-connection.svg`); локальные копии гравюр лендинга (`eng-*.webp`) |
+| `assets/` | Фирменная графика: логотип «Оракул» — гравюрный знак (полумесяц, глаз с лучами, свиток с печатью) и локап со словесной маркой (`logo-znak.webp`, `logo-znak-inv.webp`, `logo-lockup.webp`, `logo-lockup-inv.webp`, `favicon.png`), маскот — колдунья Версия в двух позах (`mascot-pechat.webp`, `mascot-lupa.webp`), спот-иллюстрации пустых состояний (`empty-search.svg`, `empty-archive.svg`, `error-connection.svg`); локальные копии гравюр лендинга (`eng-*.webp`) |
 | `app.js` | Интерактив: вкладки, диалог, меню, тосты, форма, пагинация |
 | `proto-theme.css` | Тема ДС для Lo-Fi прототипа (переопределения по каскаду, только токены) |
 | `screens/prototip/index.html` | Копия Lo-Fi прототипа р1 + подключённая тема. Исходник `/mnt/agents/output/app/prototip/index.html` **не изменён** |
@@ -116,7 +116,10 @@ GitHub Pages: https://etniy22.github.io/formatdesk-landing/design-system/
 (`/assets/`). Локальные копии в `design-system/assets/` нужны только для локального
 запуска и предпросмотра; в репозиторий они не попадают.
 
-Маскоты `mascot-*.webp` — наоборот, лежат в `design-system/assets/` и в репозитории.
+Маскоты `mascot-*.webp` и логотип «Оракул» (`logo-znak*.webp`, `logo-lockup*.webp`,
+`favicon.png`) — наоборот, лежат в `design-system/assets/` и в репозитории.
 Так как бинарные файлы через GitHub MCP не пушатся (портятся при кодировании),
 в репозиторий они попадают веб-загрузкой через интерфейс GitHub (drag & drop в папку
 `design-system/assets/`); текстовые файлы сайта пушатся через MCP как обычно.
+Растровые мастера логотипа (PNG: полный / компакт / микро, размерный ряд 16–256px)
+хранятся вне репозитория, в папке проекта.
