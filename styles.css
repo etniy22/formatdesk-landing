@@ -110,7 +110,11 @@ body {
   font-weight: 500;
   color: var(--ink);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+.nav .logo .logo-znak { height: 46px; width: auto; }
 .nav-links .nl {
   position: absolute;
   top: 40px;
@@ -237,8 +241,7 @@ body {
   position: absolute;
   left: 91px; top: 62px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 36px;
-  font-weight: 500;
+  font-size: 36px; font-weight: 500;
   line-height: 1.18;
   color: var(--ink);
 }
@@ -439,8 +442,7 @@ body {
   position: absolute;
   left: 497px; top: 245px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 36px;
-  font-weight: 500;
+  font-size: 36px; font-weight: 500;
   color: var(--green);
 }
 .mvp-list {
@@ -469,8 +471,7 @@ body {
   position: absolute;
   left: 497px; top: 599px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 30px; font-weight: 500;
   color: var(--gray);
 }
 .mvp-later-body {
@@ -541,7 +542,12 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-size: 32px; font-weight: 500;
   color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
 }
+.footer-logo .logo-znak { height: 42px; width: auto; }
 .footer-cap { position: absolute; right: 0; top: 43px; color: var(--gold); }
 
 /* ---------- адаптив: страница десктопная, ниже 1180px — горизонтальный скролл ---------- */
