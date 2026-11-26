@@ -241,7 +241,8 @@ body {
   position: absolute;
   left: 91px; top: 62px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 36px; font-weight: 500;
+  font-size: 36px;
+  font-weight: 500;
   line-height: 1.18;
   color: var(--ink);
 }
