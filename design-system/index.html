@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FormatDesk · Дизайн-система</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -14,7 +15,7 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#/">FormatDesk<span> · ДС</span></a>
+      <a class="brand" href="#/"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="3" width="29" height="42" rx="3.5" fill="#FFFFFF" stroke="#1F3D2E" stroke-width="2.6"/><path d="M11 11h17M11 17.5h17M11 24h11" stroke="#1F3D2E" stroke-width="2.6" stroke-linecap="round"/><path d="M11 31h6" stroke="#B9A37F" stroke-width="2.6" stroke-linecap="round"/><circle cx="32" cy="33" r="12" fill="#A9502F"/><path d="M32 25.5l1.9 5.6 5.6 1.9-5.6 1.9-1.9 5.6-1.9-5.6-5.6-1.9 5.6-1.9z" fill="#F7F4ED"/></svg>FormatDesk<span> · ДС</span></a>
       <nav class="topnav" aria-label="Разделы дизайн-системы">
         <a href="#/" class="active">Главная</a>
         <a href="#/osnovy">Основы</a>
@@ -29,6 +30,7 @@
   <main class="page active" data-page="" id="page-home">
     <div class="wrap">
       <p class="kicker">Дизайн-система продукта</p>
+      <p style="margin: 0 0 var(--fd-space-3)"><img src="assets/logo-mark.svg" alt="" width="56" height="56" /></p>
       <h1>FormatDesk</h1>
       <p class="lead">
         Сервис для команды оператора ЭДО: следит за форматными приказами ФНС и собирает
@@ -93,7 +95,7 @@
           <div id="home-tabs-panels">
             <div class="fd-tabpanel" id="home-tab-1" role="tabpanel" aria-labelledby="home-tabbtn-1">
               <div class="fd-search" style="margin-bottom: var(--fd-space-3)">
-                <span class="fd-search-icon" aria-hidden="true">⌕</span>
+                <span class="fd-search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.6-4.6"/></svg></span>
                 <input class="fd-input" type="search" placeholder="Поиск по реквизитам: код или наименование" aria-label="Поиск по реквизитам" />
               </div>
               <table class="fd-table">
@@ -118,8 +120,8 @@
           <div class="card" style="width: 100%">
             <p class="kicker">Запуск</p>
             <p class="small">Сайт статический, сборка не нужна:</p>
-            <p class="mono small" style="background: var(--fd-surface-warm); padding: var(--fd-space-2) var(--fd-space-3); border-radius: var(--fd-radius-m);">cd design-system<br/>python3 -m http.server 8901</p>
-            <p class="small muted">и открыть <span class="mono">http://localhost:8901/</span></p>
+            <p class="mono small" style="background: var(--fd-surface-warm); padding: var(--fd-space-2) var(--fd-space-3); border-radius: var(--fd-radius-m);">cd project<br/>python3 -m http.server 8901</p>
+            <p class="small muted">и открыть <span class="mono">http://localhost:8901/design-system/</span> — сервер из корня project, чтобы были видны гравюры из ../assets</p>
           </div>
           <div class="card" style="width: 100%">
             <p class="kicker">Разделы</p>
@@ -147,6 +149,30 @@
         Компоненты и экраны продукта используют только переменные, без «голых» значений.
         Тема одна — светлая: продукт работает с документами при дневном свете офиса; тёмная тема в объём р1 не входит.
       </p>
+
+      <div class="section-gap">
+        <h2>Логотип</h2>
+        <p class="lead" style="margin-bottom: var(--fd-space-4)">
+          Знак — лист приказа с сургучной печатью, внутри печати — золотая искра: форматы и немного магии.
+          Словесная марка — Cormorant Garamond Bold, «Desk» — терракотой, как на лендинге.
+        </p>
+        <div class="logo-grid">
+          <div class="logo-tile logo-tile--cream">
+            <span class="logo-lockup"><img src="assets/logo-mark.svg" alt="Знак FormatDesk: лист приказа с печатью" /><span class="wm">Format<i>Desk</i></span></span>
+          </div>
+          <div class="logo-tile logo-tile--dark">
+            <span class="logo-lockup"><img src="assets/logo-mark.svg" alt="" /><span class="wm">Format<i>Desk</i></span></span>
+          </div>
+          <div class="logo-tile logo-tile--white">
+            <img src="assets/logo-mark.svg" alt="Знак FormatDesk без надписи" style="width: 72px; height: 72px" />
+          </div>
+          <div class="card logo-rules">
+            <p><strong>Охранное поле</strong> — высота печати знака с каждой стороны. Минимальная высота знака — 16px, полного логотипа — 24px.</p>
+            <p><strong>На тёмном</strong> (глубокий зелёный) словесная марка — белая, «Desk» — янтарной; знак не меняется: белый лист читается сам.</p>
+            <p class="muted small" style="margin: 0">Нельзя: менять пропорции и цвета, поворачивать, ставить на пёстрый фон без подложки. Файлы: <span class="mono">assets/logo.svg</span>, <span class="mono">assets/logo-mark.svg</span>, <span class="mono">assets/favicon.svg</span>.</p>
+          </div>
+        </div>
+      </div>
 
       <div class="section-gap">
         <h2>Палитра</h2>
@@ -242,24 +268,57 @@
         </div>
       </div>
 
-      <div class="section-gap grid-2">
-        <div>
-          <h2>Иконки</h2>
-          <div class="card">
-            <p>Линейные, 1.5px, круглые окончания, размер 16–20px. В действиях — всегда с текстовой подписью.</p>
-            <div class="demo-row" style="font-size: 20px; color: var(--fd-primary)">
-              <span title="Поиск">⌕</span><span title="Якорь XSD">↗</span><span title="Раскрыть">▸</span><span title="Закрыть">×</span><span title="Успех">✓</span><span title="Предупреждение">⚠</span><span title="Добавить">+</span>
-            </div>
-            <p class="muted small">В р1 используется системный набор символов прототипа; выделенный иконочный шрифт — за пределами р1.</p>
+      <div class="section-gap">
+        <h2>Иконки</h2>
+        <div class="card">
+          <p>Авторский набор: сетка 24px, линия 1.8px со скруглёнными концами, цвет — <span class="mono">currentColor</span> (наследует цвет текста и кнопок). Акцентные детали — только золото и терракота: искра, печать, редкие метки.</p>
+          <div class="icon-grid">
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.6-4.6"/></svg><span class="icon-name">Поиск</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M20 13.5V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19V6a1.5 1.5 0 0 1 1.5-1.5H11"/></svg><span class="icon-name">Источник</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h6l4 4v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M14 3v4h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg><span class="icon-name">Приказ</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="5" rx="1.5"/><rect x="3.5" y="15.5" width="6" height="5" rx="1.5"/><rect x="14.5" y="15.5" width="6" height="5" rx="1.5"/><path d="M12 8v3.5M6.5 15.5v-1.5A1.5 1.5 0 0 1 8 12.5h8a1.5 1.5 0 0 1 1.5 1.5v1.5"/></svg><span class="icon-name">Дерево XSD</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M9.5 9.5V20"/></svg><span class="icon-name">Макет</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3.5 10h17"/></svg><span class="icon-name">Дата</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5l1.2 3.3 3.3 1.2-3.3 1.2L12 16.5l-1.2-3.3-3.3-1.2 3.3-1.2z" fill="#D4AF37" stroke="none"/></svg><span class="icon-name">Печать</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.8-5"/></svg><span class="icon-name">Успех</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 21 20H3z"/><path d="M12 10v4.5"/><circle cx="12" cy="17" r=".6" fill="currentColor" stroke="none"/></svg><span class="icon-name">Внимание</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.5h8l4.5 4.5v8L16 20.5H8L3.5 16V8z"/><path d="M12 8v4.5"/><circle cx="12" cy="15.8" r=".6" fill="currentColor" stroke="none"/></svg><span class="icon-name">Ошибка</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".6" fill="currentColor" stroke="none"/></svg><span class="icon-name">Инфо</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="icon-name">Добавить</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span class="icon-name">Закрыть</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5.5 9 6.5 6.5L18.5 9"/></svg><span class="icon-name">Раскрыть</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11.5" height="11.5" rx="2"/><path d="M15 5.5V5a2 2 0 0 0-2-2H5.5A2 2 0 0 0 3.5 5V13a2 2 0 0 0 2 2h.5"/></svg><span class="icon-name">Копировать</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v10m0 0-4-4m4 4 4-4"/><path d="M4.5 19.5h15"/></svg><span class="icon-name">Скачать</span></div>
+            <div class="icon-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l2 5.5 5.5 2-5.5 2-2 5.5-2-5.5L4.5 12l5.5-2z" fill="#D4AF37" stroke="none"/><path d="M18.5 3.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z" fill="currentColor" stroke="none"/></svg><span class="icon-name">Искра</span></div>
+          </div>
+          <p class="muted small" style="margin-top: var(--fd-space-3)">У иконки рядом с текстом — <span class="mono">aria-hidden</span>; иконка-кнопка — всегда с <span class="mono">aria-label</span>. В Lo-Fi прототипе р1 остались системные символы; этот набор — стандарт для следующих итераций.</p>
+        </div>
+      </div>
+
+      <div class="section-gap">
+        <h2>Иллюстрации</h2>
+        <div class="card">
+          <h3>Спот-иллюстрации пустых состояний</h3>
+          <p class="muted small">Чернильная линия, штриховка под 45°, песочные детали и одна терракотовая печать или золотая искра — гравюрный характер лендинга в формате маленького SVG. Используются только в пустых состояниях и ошибках, по одной на экран.</p>
+          <div class="spot-grid">
+            <div class="spot-card"><img src="assets/empty-search.svg" alt="Лупа над стопкой приказов, в линзе — золотая искра" /><span class="spot-name">Ничего не найдено · assets/empty-search.svg</span></div>
+            <div class="spot-card"><img src="assets/empty-archive.svg" alt="Открытая архивная коробка с одной папкой и печатью" /><span class="spot-name">Архив пуст · assets/empty-archive.svg</span></div>
+            <div class="spot-card"><img src="assets/error-connection.svg" alt="Разорванный лист приказа и знак ошибки" /><span class="spot-name">Ошибка загрузки · assets/error-connection.svg</span></div>
           </div>
         </div>
-        <div>
-          <h2>Иллюстрации и motion</h2>
-          <div class="card">
-            <p>Иллюстративный стиль продукта — гравюры лендинга (гербарий, всадники, маги): чернильный штрих на креме. В сервисе иллюстрации не используются, только в пустых состояниях.</p>
-            <p><span class="token-name">motion: 120ms / 200ms, ease-out</span> — только наведения, раскрытия и появление тостов. Без декоративной анимации данных.</p>
-            <p class="muted small">При prefers-reduced-motion все переходы отключаются (реализовано в tokens.css).</p>
+        <div class="card section-gap">
+          <h3>Гравюры лендинга</h3>
+          <p class="muted small">Крупный иллюстративный стиль бренда — гравюры: чернильный штрих на креме. Живут на лендинге и в маркетинге, в сервис не переносятся.</p>
+          <div class="illu-grid">
+            <figure><img src="../assets/eng-burin.webp" alt="Гравюра: руки гравёра с резцом, лупой и чернильницей" loading="lazy" /><figcaption>Гравёр с резцом и лупой — метафора ручной сверки форматов</figcaption></figure>
+            <figure><img src="../assets/eng-duo.webp" alt="Гравюра: маг со свитком-таблицей и ведьма, зажигающая искру" loading="lazy" /><figcaption>Маг со свитком реквизитов и искра — характер бренда</figcaption></figure>
           </div>
+          <p class="muted small" style="margin-top: var(--fd-space-2)">Файлы гравюр — в репозитории лендинга (<span class="mono">/assets</span>), здесь показаны по ссылке, без дублирования.</p>
+        </div>
+        <div class="card section-gap">
+          <h3>Motion</h3>
+          <p><span class="token-name">motion: 120ms / 200ms, ease-out</span> — только наведения, раскрытия и появление тостов. Без декоративной анимации данных.</p>
+          <p class="muted small" style="margin: 0">При prefers-reduced-motion все переходы отключаются (реализовано в tokens.css).</p>
         </div>
       </div>
 
@@ -369,7 +428,7 @@
                 </select>
               </div>
               <div class="fd-search">
-                <span class="fd-search-icon" aria-hidden="true">⌕</span>
+                <span class="fd-search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.6-4.6"/></svg></span>
                 <input class="fd-input" type="search" placeholder="Поиск по реквизитам: код или наименование" aria-label="Поиск по реквизитам" />
               </div>
             </div>
@@ -488,9 +547,9 @@
       <div class="section-gap">
         <h2>Уведомления и прогресс <span class="fd-badge fd-badge--dark">прототип</span></h2>
         <div class="card demo-col">
-          <div class="fd-alert fd-alert--success" role="status"><p><span class="fd-alert-title">Группировка принята.</span>Блок «Сведения о грузоотправителе» добавлен в черновик постановки.</p><button class="close" aria-label="Закрыть">×</button></div>
-          <div class="fd-alert fd-alert--warning" role="status"><p><span class="fd-alert-title">Версия заменяется.</span>С 01.03.2027 действует редакция 5.02 — сверьте постановку до этой даты.</p><button class="close" aria-label="Закрыть">×</button></div>
-          <div class="fd-alert fd-alert--error" role="alert"><p><span class="fd-alert-title">Не удалось загрузить данные версии.</span>Проверьте соединение и попробуйте ещё раз. Если ошибка повторяется — откройте приказ на nalog.gov.ru.</p><button class="close" aria-label="Закрыть">×</button></div>
+          <div class="fd-alert fd-alert--success" role="status"><span class="fd-alert-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.8-5"/></svg></span><p><span class="fd-alert-title">Группировка принята.</span>Блок «Сведения о грузоотправителе» добавлен в черновик постановки.</p><button class="close" aria-label="Закрыть">×</button></div>
+          <div class="fd-alert fd-alert--warning" role="status"><span class="fd-alert-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 21 20H3z"/><path d="M12 10v4.5"/><circle cx="12" cy="17" r=".6" fill="currentColor" stroke="none"/></svg></span><p><span class="fd-alert-title">Версия заменяется.</span>С 01.03.2027 действует редакция 5.02 — сверьте постановку до этой даты.</p><button class="close" aria-label="Закрыть">×</button></div>
+          <div class="fd-alert fd-alert--error" role="alert"><span class="fd-alert-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.5h8l4.5 4.5v8L16 20.5H8L3.5 16V8z"/><path d="M12 8v4.5"/><circle cx="12" cy="15.8" r=".6" fill="currentColor" stroke="none"/></svg></span><p><span class="fd-alert-title">Не удалось загрузить данные версии.</span>Проверьте соединение и попробуйте ещё раз. Если ошибка повторяется — откройте приказ на nalog.gov.ru.</p><button class="close" aria-label="Закрыть">×</button></div>
           <div class="demo-row">
             <button class="fd-btn fd-btn--secondary" data-toast="Изменения сохранены." data-toast-kind="success">Тост «успех»</button>
             <button class="fd-btn fd-btn--secondary" data-toast="Соединение восстановлено." data-toast-kind="info">Тост «инфо»</button>
@@ -523,7 +582,7 @@
             <p class="muted small" style="margin-top: var(--fd-space-3)">Скелетон для строк таблицы.</p>
           </div>
           <div class="card fd-empty">
-            <div class="fd-empty-icon" aria-hidden="true">☰</div>
+            <div class="fd-empty-icon"><img src="assets/empty-search.svg" alt="" /></div>
             <p><strong>По запросу ничего не найдено.</strong></p>
             <p class="small">Проверьте код реквизита или сбросьте фильтр «Только обязательные».</p>
           </div>
