@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" role="img" aria-label="FormatDesk">
+  <!-- Горизонтальный логотип: знак + словесная марка Cormorant Garamond.
+       В продукте используется как инлайн-знак + текст; этот файл — для документов и презентаций. -->
+  <rect x="5" y="3" width="29" height="42" rx="3.5" fill="#FFFFFF" stroke="#1F3D2E" stroke-width="2.6"/>
+  <path d="M11 11h17M11 17.5h17M11 24h11" stroke="#1F3D2E" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M11 31h6" stroke="#B9A37F" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="32" cy="33" r="12" fill="#A9502F"/>
+  <circle cx="32" cy="33" r="12" fill="none" stroke="#8F4024" stroke-width="1.4"/>
+  <path d="M32 25.5l1.9 5.6 5.6 1.9-5.6 1.9-1.9 5.6-1.9-5.6-5.6-1.9 5.6-1.9z" fill="#F7F4ED"/>
+  <text x="52" y="31" font-family="Cormorant Garamond, Times New Roman, serif" font-weight="700" font-size="26" fill="#1A1A1A">Format<tspan fill="#A9502F">Desk</tspan></text>
+</svg>
