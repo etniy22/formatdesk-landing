@@ -25,7 +25,7 @@ python3 -m http.server 8901
 | `tokens.css` | Единственный источник значений — CSS-переменные |
 | `tokens.json` | Машинно-читаемая копия токенов |
 | `styles.css` | Библиотека компонентов `.fd-*` и стили сайта |
-| `assets/` | Фирменная графика: логотип «Оракул» — гравюрный знак (полумесяц, глаз с лучами, свиток с печатью) и локап со словесной маркой (`logo-znak.webp`, `logo-znak-inv.webp`, `logo-lockup.webp`, `logo-lockup-inv.webp`, `favicon.png`), маскот — колдунья Версия в двух позах (`mascot-pechat.webp`, `mascot-lupa.webp`), спот-иллюстрации пустых состояний — растровые гравюры (`empty-search.webp`, `empty-archive.webp`, `error-connection.webp`); локальные копии гравюр лендинга (`eng-*.webp`) |
+| `assets/` | Фирменная графика: логотип «Оракул» — гравюрный знак (полумесяц, глаз с лучами, свиток с печатью) и локап со словесной маркой (`logo-znak.webp`, `logo-znak-inv.webp`, `logo-znak-micro.webp`, `logo-lockup.webp`, `logo-lockup-inv.webp`, `favicon.png`), маскот — колдунья Версия в двух позах (`mascot-pechat.webp`, `mascot-lupa.webp`), спот-иллюстрации пустых состояний — растровые гравюры (`empty-search.webp`, `empty-archive.webp`, `error-connection.webp`); локальные копии гравюр лендинга (`eng-*.webp`) |
 | `app.js` | Интерактив: вкладки, диалог, меню, тосты, форма, пагинация |
 | `proto-theme.css` | Тема ДС для Lo-Fi прототипа (переопределения по каскаду, только токены) |
 | `screens/prototip/index.html` | Копия Lo-Fi прототипа р1 + подключённая тема. Исходник `/mnt/agents/output/app/prototip/index.html` **не изменён** |
@@ -95,7 +95,7 @@ python3 -m http.server 8901
 Логотип «Оракул» (2026-11-27, Playwright — актуальные данные, заменяют проверку знака-печати выше):
 
 - Раздел «Логотип»: локап на креме (`logo-lockup.webp`), инверсный локап на тёмно-зелёном (`logo-lockup-inv.webp`), знак на белом (`logo-znak.webp`) — рендер OK, читается
-- Знак в топбаре (`brand-znak`, 30px) и на Главной (76px) — рендер OK
+- Знак в топбаре — микро-версия по размерному ряду (`brand-znak`, 30px, файл `logo-znak-micro.webp`) и полная версия на Главной (76px) — рендер OK
 - Фавикон `assets/favicon.png` подключён вместо `favicon.svg` — OK
 - Лендинг: знак в шапке (46px) и инверсный в подвале (42px) — рендер OK
 - Консоль без ошибок, HTTP ≥400 нет; 390px — `scrollWidth` = 390, горизонтальной прокрутки нет
